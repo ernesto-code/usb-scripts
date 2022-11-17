@@ -38,6 +38,9 @@ setTimeout(()=>{
     let tableRows =   document.getElementsByTagName("tr");
     var tdArray = Array.prototype.slice.call(document.getElementsByTagName("td"))
 
+    // Common functions
+    
+
     // Bolded text
     checkbox.addEventListener('click',()=>{
         var first;
@@ -64,15 +67,9 @@ setTimeout(()=>{
     }),500
 
     clearButton.addEventListener('click',()=>{
-        // Showing all issues
-        console.log('showing ....')
-        for (index = 1; index < tableRows.length; index++ ){    
-            tableRows[index].style.display = 'table-row'
-        }
+        
 
     })
- // Display issues per selected component
-
 
     // Filter by components
     selectComponent.addEventListener('change',(event)=>{
@@ -86,14 +83,6 @@ setTimeout(()=>{
         console.log(selectedComp)
         console.log(selectedValue)
 
-        // Current components
-        /*for (index = 1; index < tableRows.length; index++ ){    
-            title = tableRows[index].children[1].children[0].children[0].innerText
-            comp = title.substring(0,title.indexOf('/',0))
-            if(comps.indexOf(comp) == -1) 
-                comps.push(comp)
-        }
-        */
         for (index = 1; index < tableRows.length; index++ ){    
             title = tableRows[index].children[1].children[0].children[0].innerText
             if(!title.includes(selectedValue))
